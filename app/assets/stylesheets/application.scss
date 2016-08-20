@@ -1,0 +1,24 @@
+$grid-gutter-width: 15px;
+$navbar-height: 40px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  margin-top: $navbar-height + $grid-gutter-width;
+}
+
+.panel {
+  margin-bottom: $grid-gutter-width;
+}
+
+table {
+  @extend .table, .table-condensed, .table-hover;
+}
+
+label {
+  @extend .control-label;
+}

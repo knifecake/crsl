@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Carousels
+    <%= link_to '<i class="fa fa-cubes"></i> New carousel'.html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @carousels.each do |carousel| %>
+        <tr>
+          <td><%= link_to carousel.title, carousel %></td>
+          <td><%= link_to 'View', carousel_display_path(carousel) %></td>
+          <td><%= link_to '<i class="fa fa-times text-danger"></i>'.html_safe, carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% if @carousels.empty? %>
+    <div class="panel-body text-center">
+      No messages yet
+    </div>
+  <% end %>
+</div>
