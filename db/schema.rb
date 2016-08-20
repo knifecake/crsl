@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820083349) do
+ActiveRecord::Schema.define(version: 20160820133755) do
 
   create_table "carousels", force: :cascade do |t|
     t.string   "title"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 20160820083349) do
     t.index ["email"], name: "index_models_on_email", unique: true
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_models_on_unlock_token", unique: true
+  end
+
+  create_table "posters", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "carousel_id"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["carousel_id"], name: "index_posters_on_carousel_id"
   end
 
   create_table "users", force: :cascade do |t|

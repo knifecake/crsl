@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'paperclip'
+
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 

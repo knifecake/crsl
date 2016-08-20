@@ -7,6 +7,8 @@ $navbar-height: 40px;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "posters";
+
 body {
   margin-top: $navbar-height + $grid-gutter-width;
 }

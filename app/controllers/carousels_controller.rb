@@ -66,7 +66,7 @@ class CarouselsController < AdminController
     def set_carousel
       @carousel = Carousel.find_by(id: params[:id])
 
-      raise Exception if @carousel.user != current_user
+      raise Exception unless @carousel.user == current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,26 @@
+// Place all the styles related to the Posters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.poster-thumb {
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-large;
+  box-shadow: 0 0 5px $gray-lighter;
+  background-size: cover;
+
+  padding: 1rem;
+  margin: $grid-gutter-width / 2;
+  height: 180px;
+  width: 320px;
+  float: left;
+
+  h1 {
+    font-size: 2rem;
+    color: white;
+    background: transparentize($gray-darker, 0.5);
+
+    display: inline-block;
+    margin: 0;
+    padding: 0.3rem;
+  }
+}
