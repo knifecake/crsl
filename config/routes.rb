@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :carousels
 
-  get '/crsl/:id', to: 'home#carousel', as: :carousel_display
+  get '/crsl/:id', to: 'displays#carousel', as: :carousel_display
   root 'home#index'
 end

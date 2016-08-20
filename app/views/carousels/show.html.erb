@@ -1,1 +1,18 @@
-<%= render 'form' %>
+<h1><i class="fa fa-cubes"></i> Edit carousel</h1>
+
+<div class="row">
+  <div class="col-lg-8 col-md-8">
+    <%= render 'form' %>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="fa fa-cogs"></i> More options
+      </div>
+      <div class="list-group">
+        <%= link_to 'Delete carousel', carousel_path(@carousel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'list-group-item list-group-item-danger' %>
+      </div>
+    </div>
+  </div>
+</div>

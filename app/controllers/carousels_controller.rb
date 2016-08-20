@@ -4,7 +4,7 @@ class CarouselsController < AdminController
   # GET /carousels
   # GET /carousels.json
   def index
-    @carousels = Carousel.all
+    @carousels = Carousel.where(user: current_user)
   end
 
   # GET /carousels/1
@@ -64,7 +64,9 @@ class CarouselsController < AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_carousel
-      @carousel = Carousel.find(params[:id])
+      @carousel = Carousel.find_by(id: params[:id])
+
+      raise Exception if @carousel.user != current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
