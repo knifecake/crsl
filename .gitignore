@@ -22,3 +22,5 @@
 
 # OSX
 .DS_Store
+
+/public/system

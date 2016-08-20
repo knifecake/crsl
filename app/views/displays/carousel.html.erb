@@ -1,1 +1,6 @@
-<h1 style="font-size: 20rem"><%= @carousel.title %></h1>
+<div class="carousel">
+  <% @carousel.posters.each do |p| %>
+    <div class="poster" style="background-image: url(<%= p.background.url %>)">
+    </div>
+  <% end %>
+</div>

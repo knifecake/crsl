@@ -11,6 +11,7 @@
         <i class="fa fa-cogs"></i> More options
       </div>
       <div class="list-group">
+        <%= link_to 'Preview carousel', carousel_display_path(@carousel), class: 'list-group-item' %>
         <%= link_to 'New poster', new_carousel_poster_path(@carousel), class: 'list-group-item' %>
         <%= link_to 'Delete carousel', carousel_path(@carousel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'list-group-item list-group-item-danger' %>
       </div>

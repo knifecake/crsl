@@ -9,6 +9,10 @@ $navbar-height: 40px;
 
 @import "posters";
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin-top: $navbar-height + $grid-gutter-width;
 }

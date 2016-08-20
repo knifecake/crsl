@@ -1,0 +1,32 @@
+@import "slick";
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.poster {
+  height: 100%;
+  width: 100%;
+  background-size: cover !important;
+
+}
+
+.carousel {
+  height: 100%;
+}
+
+.slick-list,
+.slick-track {
+  height: 100%;
+}
