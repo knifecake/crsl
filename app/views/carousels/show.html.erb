@@ -20,10 +20,11 @@
   </div>
 </div>
 
-<h2>
+<h3>
   <i class="fa fa-image"></i> Posters
   <%= link_to '<i class="fa fa-plus"></i> New poster'.html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
-</h2>
+</h3>
+<hr>
 <div class="row">
   <%= render @carousel.posters %>
   <% if @carousel.posters.empty? %>

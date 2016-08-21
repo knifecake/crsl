@@ -1,3 +1,8 @@
 <div class="poster-thumb" style="width: <%= poster.width :preview %>; height: <%= poster.height :preview %>; background-image: url(<%= poster.background.url :preview %>)">
-    <h1><%= poster.title %></h1>
+    <span class="poster-title"><%= poster.title %></span>
+    <div class="poster-overlay">
+      <div class="actions">
+        <%= link_to '<i class="fa fa-times"></i> Delete'.html_safe, carousel_poster_path(poster.carousel, poster), method: :delete, data: { confirm: "Delete poster \"#{poster.title}\"?" }%>
+      </div>
+    </div>
   </div>

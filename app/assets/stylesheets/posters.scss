@@ -2,21 +2,57 @@
 
 .poster-thumb {
   border: 1px solid $gray-lighter;
-  border-radius: $border-radius-large;
-  box-shadow: 0 0 5px $gray-lighter;
+  box-shadow: 0 0 7px $gray-lighter;
   background-size: cover;
 
   padding: 1rem;
   margin: $grid-gutter-width / 2;
   float: left;
 
-  h1 {
-    font-size: 2rem;
-    color: white;
+  font-size: 2rem;
+  color: white;
+  position:relative;
+
+
+  .poster-title {
     background: transparentize($gray-darker, 0.5);
 
     display: inline-block;
     margin: 0;
-    padding: 0.3rem;
+    padding: 0 0.5rem;
+  }
+
+  .poster-overlay {
+    visibility: hidden;
+
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: transparentize($gray-darker, 0.3);
+    text-align: center;
+
+    .actions {
+      position: static;
+      width: 100%;
+      height: 100%;
+
+      a {
+        display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        color: white;
+        &:hover { text-decoration: none; }
+      }
+    }
+
+  }
+
+  &:hover .poster-overlay {
+    visibility: visible;
   }
 }
