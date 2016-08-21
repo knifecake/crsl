@@ -1,6 +1,6 @@
 <div class="carousel">
   <% @carousel.posters.each do |p| %>
-    <div class="poster" style="background-image: url(<%= p.background.url :carousel %>)">
+    <div class="poster" style="background-image: url(<%= p.background.url :rotated %>)">
     </div>
   <% end %>
 </div>
