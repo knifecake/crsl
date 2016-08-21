@@ -1,8 +1,9 @@
-<h1><i class="fa fa-cubes"></i> Edit carousel</h1>
-
 <div class="row">
   <div class="col-lg-8 col-md-8">
-    <%= render 'form' %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><i class="fa fa-edit"></i> Edit carousel</div>
+      <div class="panel-body"><%= render 'form' %></div>
+    </div>
   </div>
 
   <div class="col-lg-4 col-md-4">
@@ -11,15 +12,18 @@
         <i class="fa fa-cogs"></i> More options
       </div>
       <div class="list-group">
-        <%= link_to 'Preview carousel', carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
-        <%= link_to 'New poster', new_carousel_poster_path(@carousel), class: 'list-group-item' %>
-        <%= link_to 'Delete carousel', carousel_path(@carousel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'list-group-item list-group-item-danger' %>
+        <%= link_to '<i class="fa fa-eye"></i> Preview carousel'.html_safe, carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
+        <%= link_to '<i class="fa fa-plus"></i> New poster'.html_safe, new_carousel_poster_path(@carousel), class: 'list-group-item' %>
+        <%= link_to '<i class="fa fa-times"></i> Delete carousel'.html_safe, carousel_path(@carousel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'list-group-item list-group-item-danger' %>
       </div>
     </div>
   </div>
 </div>
 
-<h2>Posters</h2>
+<h2>
+  <i class="fa fa-image"></i> Posters
+  <%= link_to '<i class="fa fa-plus"></i> New poster'.html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
+</h2>
 <div class="row">
   <%= render @carousel.posters %>
   <% if @carousel.posters.empty? %>

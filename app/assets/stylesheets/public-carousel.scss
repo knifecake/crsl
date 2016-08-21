@@ -20,7 +20,10 @@ body {
 .poster {
   height: 100%;
   width: 100%;
-  background-size: cover !important;
+  background-color: #000;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
 
 }
 

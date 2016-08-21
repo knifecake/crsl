@@ -1,7 +1,9 @@
 $(document).ready ->
+  speed = $('.carousel').data('speed')
+
   $('.carousel').slick({
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: speed,
     arrows: false,
     draggable: false,
     pauseOnFocus: false,

@@ -13,4 +13,12 @@ class Poster < ApplicationRecord
   validates_attachment :background,
     presence: true,
     content_type: { content_type: /\Aimage\/.*\z/ }
+
+  def height(style)
+      carousel.user.settings.display_orientation == 'portrait' ? '300px' : '210px'
+  end
+
+  def width(style)
+    carousel.user.settings.display_orientation == 'portrait' ? '210px' : '300px'
+  end
 end
