@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  display_orientation: MyString
+  carousel_speed: 1
+
+two:
+  user: two
+  display_orientation: MyString
+  carousel_speed: 1

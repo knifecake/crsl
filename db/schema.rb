@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820133755) do
+ActiveRecord::Schema.define(version: 20160821115810) do
 
   create_table "carousels", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20160820133755) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["carousel_id"], name: "index_posters_on_carousel_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "display_orientation"
+    t.integer "carousel_speed"
+    t.index ["user_id"], name: "index_settings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><i class="fa fa-cogs"></i> Account settings</div>
+      <div class="panel-body">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal', method: :put }, wrapper: :horizontal_form) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :name, autofocus: true %>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <%= f.input :email, required: true, hint: "Currently waiting confirmation for: #{resource.unconfirmed_email}" %>
+            <% else %>
+              <%= f.input :email, required: true %>
+            <% end %>
+
+            <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+            <%= f.input :password_confirmation, required: false %>
+            <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+              <%= f.button :submit, "Update", class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><i class="fa fa-tv"></i> Display settings</div>
+      <div class="panel-body">
+        <%= simple_form_for(current_user.settings, url: update_settings_path, method: :put, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
+          <div class="form-inputs">
+            <div class="form-group required">
+              <label for="settings_display_orientation" class="required control-label col-sm-3">
+                <abbr title="required">*</abbr>
+                Display orientation
+              </label>
+              <div class="col-sm-9">
+                <label class="radio-inline">
+                  <%= radio_button_tag 'settings[display_orientation]', 'portrait', current_user.settings.display_orientation == 'portrait' %>
+                  <i class="fa fa-tv fa-rotate-270"></i> portrait
+                </label>
+                <label class="radio-inline">
+                  <%= radio_button_tag 'settings[display_orientation]', 'landscape', current_user.settings.display_orientation == 'landscape' %>
+                  <i class="fa fa-tv"></i> landscape
+                </label>
+                <p class="help-block"> remember to update your posters accordingly</p>
+              </div>
+            </div>
+            <%= f.input :carousel_speed, hint: 'number of milliseconds to show each poster' %>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+              <%= f.button :submit, "Update", class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-danger">
+      <div class="panel-heading"><i class="fa fa-times"></i> Delete acount</div>
+      <div class="panel-body">
+        <p><strong>We are sad to see you go!</strong> Please understand the following:</p>
+        <ul>
+          <li>All your carousels and posters will be deleted from our servers.</li>
+          <li>They will no longer be avaliable for public display.</li>
+          <li>We will not be able to recover any of the information you gave us – we will not even be able to know if you ever had an acount with us.</li>
+        </ul>
+        <p><%= link_to 'Delete my acount now', registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
+      </div>
+    </div>
+  </div>
+</div>
