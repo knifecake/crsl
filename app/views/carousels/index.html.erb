@@ -24,7 +24,7 @@
 
   <% if @carousels.empty? %>
     <div class="panel-body text-center">
-      No messages yet
+      No carousels yet. <%= link_to 'Create one now!', new_carousel_path %>
     </div>
   <% end %>
 </div>

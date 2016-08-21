@@ -22,4 +22,7 @@
 <h2>Posters</h2>
 <div class="row">
   <%= render @carousel.posters %>
+  <% if @carousel.posters.empty? %>
+    <p>No posters yet. <%= link_to 'Upload one now!', new_carousel_poster_path(@carousel) %></p>
+  <% end %>
 </div>
