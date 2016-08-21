@@ -1,6 +1,8 @@
 class DisplaysController < ApplicationController
-  layout 'carousel'
+  layout 'public-carousel'
 
+  # public display controller
+  # GET /c/:id
   def carousel
     @carousel = Carousel.find(params[:id])
 
