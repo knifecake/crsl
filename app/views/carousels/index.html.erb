@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         Carousels
-        <%= link_to '<i class="fa fa-cubes"></i> New carousel'.html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
+        <%= link_to '<i class="fa fa-plus"></i> New carousel'.html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
       </div>
       <table class="table">
         <thead>
@@ -17,7 +17,7 @@
           <% @carousels.each do |carousel| %>
             <tr>
               <td><%= link_to carousel.title, carousel %></td>
-              <td><%= link_to '<i class="fa fa-eye"></i> Preview'.html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' unless carousel.posters.empty? %></td>
+              <td><%= link_to '<i class="fa fa-eye"></i> Preview'.html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' if carousel.can_be_previewed? %></td>
               <td><%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, carousel_path(carousel) %></td>
               <td><%= link_to '<i class="fa fa-times"></i> Delete'.html_safe, carousel, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></td>
             </tr>

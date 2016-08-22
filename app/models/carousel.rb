@@ -15,4 +15,8 @@ class Carousel < ApplicationRecord
   def speed
     user.settings.carousel_speed
   end
+
+  def can_be_previewed?
+    posters.any?
+  end
 end
