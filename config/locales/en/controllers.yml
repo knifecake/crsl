@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  carousels:
+    create:
+      success: 'Carousel was successfully created.'
+    update:
+      success: 'Carousel was successfully updated.'
+    destroy:
+      success: 'Carousel was successfully destroyed.'
+
+  posters:
+    create:
+      success: 'Poster was successfully created.'
+    destroy:
+      success: 'Poster was successfully deleted.'
+
+  settings:
+    update:
+      success: 'Settings were successfully updated.'
+      error: 'There were errors while updating your settings: '

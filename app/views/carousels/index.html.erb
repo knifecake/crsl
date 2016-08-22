@@ -3,12 +3,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         Carousels
-        <%= link_to '<i class="fa fa-plus"></i> New carousel'.html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
+        <%= link_to "<i class=\"fa fa-plus\"></i> #{t('carousels.new_carousel')}".html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
       </div>
       <table class="table">
         <thead>
           <tr>
-            <th>Title</th>
+            <th><%= t 'carousels.title' %></th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -17,9 +17,9 @@
           <% @carousels.each do |carousel| %>
             <tr>
               <td><%= link_to carousel.title, carousel %></td>
-              <td><%= link_to '<i class="fa fa-eye"></i> Preview'.html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' if carousel.can_be_previewed? %></td>
-              <td><%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, carousel_path(carousel) %></td>
-              <td><%= link_to '<i class="fa fa-times"></i> Delete'.html_safe, carousel, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></td>
+              <td><%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview')}".html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' if carousel.can_be_previewed? %></td>
+              <td><%= link_to "<i class=\"fa fa-edit\"></i> #{t('carousels.edit')}".html_safe, carousel_path(carousel) %></td>
+              <td><%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete')}".html_safe, carousel, method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'text-danger' %></td>
             </tr>
           <% end %>
         </tbody>
@@ -27,7 +27,8 @@
 
       <% if @carousels.empty? %>
         <div class="panel-body text-center">
-          No carousels yet. <%= link_to 'Create one now!', new_carousel_path %>
+          <%= t('carousels.empty') %>
+          <%= link_to t('carousels.create_callout'), new_carousel_path %>
         </div>
       <% end %>
     </div>

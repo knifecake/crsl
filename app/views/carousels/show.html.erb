@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-8 col-md-8">
     <div class="panel panel-default">
-      <div class="panel-heading"><i class="fa fa-edit"></i> Edit carousel</div>
+      <div class="panel-heading"><i class="fa fa-edit"></i> <%= t 'carousels.edit_carousel' %></div>
       <div class="panel-body"><%= render 'form' %></div>
     </div>
   </div>
@@ -9,19 +9,19 @@
   <div class="col-lg-4 col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <i class="fa fa-cogs"></i> More options
+        <i class="fa fa-cogs"></i> <%= t 'carousels.more_options' %>
       </div>
       <div class="list-group">
         <% if @carousel.can_be_previewed? %>
           <div class="list-group-item">
             <h4><%= carousel_display_url %></h4>
-            <p>Browse to this URL on your public screen to display your carousel</p>
+            <p><%= t 'carousels.display_url_description' %></p>
           </div>
-          <%= link_to '<i class="fa fa-eye"></i> Preview carousel'.html_safe, carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
+          <%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview_carousel')}".html_safe, carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
         <% else %>
-          <a href="#" class="list-group-item disabled">Cannot preview carousel (add some posters first!)</a>
+          <a href="#" class="list-group-item disabled"><%= t 'carousels.cannot_preview' %></a>
         <% end %>
-        <%= link_to '<i class="fa fa-times"></i> Delete carousel'.html_safe, carousel_path(@carousel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'list-group-item list-group-item-danger' %>
+        <%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete_carousel')}".html_safe, carousel_path(@carousel), method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'list-group-item list-group-item-danger' %>
       </div>
     </div>
   </div>
@@ -29,12 +29,12 @@
 
 <h3>
   <i class="fa fa-image"></i> Posters
-  <%= link_to '<i class="fa fa-plus"></i> New poster'.html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
+  <%= link_to "<i class=\"fa fa-plus\"></i> #{t('posters.new_poster')}".html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
 </h3>
-<hr> <!-- TODO: can we still do this -->
+<hr> <!-- TODO: can we still do this (the <hr> thing) -->
 <div class="row">
   <%= render @carousel.posters %>
   <% if @carousel.posters.empty? %>
-    <p>No posters yet. <%= link_to 'Upload one now!', new_carousel_poster_path(@carousel) %></p>
+    <p><%= t 'posters.empty' %> <%= link_to t('posters.create_callout'), new_carousel_poster_path(@carousel) %></p>
   <% end %>
 </div>

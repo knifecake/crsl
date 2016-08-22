@@ -2,7 +2,7 @@
     <span class="poster-title"><%= poster.title %></span>
     <div class="poster-overlay">
       <div class="actions">
-        <%= link_to '<i class="fa fa-times"></i> Delete'.html_safe, carousel_poster_path(poster.carousel, poster), method: :delete, data: { confirm: "Delete poster \"#{poster.title}\"?" }%>
+        <%= link_to "<i class=\"fa fa-times\"></i> #{t('posters.delete')}".html_safe, carousel_poster_path(poster.carousel, poster), method: :delete, data: { confirm: t('posters.delete_confirmation') }%>
       </div>
     </div>
   </div>

@@ -28,7 +28,7 @@ class CarouselsController < AdminController
 
     respond_to do |format|
       if @carousel.save
-        format.html { redirect_to @carousel, notice: 'Carousel was successfully created.' }
+        format.html { redirect_to @carousel, notice: t('carousels.create.success') }
         format.json { render :show, status: :created, location: @carousel }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CarouselsController < AdminController
   def update
     respond_to do |format|
       if @carousel.update(carousel_params)
-        format.html { redirect_to @carousel, notice: 'Carousel was successfully updated.' }
+        format.html { redirect_to @carousel, notice: t('carousels.update.success') }
         format.json { render :show, status: :ok, location: @carousel }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CarouselsController < AdminController
   def destroy
     @carousel.destroy
     respond_to do |format|
-      format.html { redirect_to carousels_url, notice: 'Carousel was successfully destroyed.' }
+      format.html { redirect_to carousels_url, notice: t('carousels.destroy.success') }
       format.json { head :no_content }
     end
   end

@@ -1,0 +1,26 @@
+en:
+  carousels:
+    new_carousel: "New carousel"
+    edit_carousel: "Edit carousel"
+    preview_carousel: "Preview_carousel"
+    delete_carousel: "Delete carousel"
+
+    title: "Title"
+    preview: "Preview"
+    edit: "Edit"
+    delete: "Delete"
+
+    confirm_delete: "Are your sure you want to delete this carousel?"
+    empty: "No carousels yet."
+    create_callout: "Create one now!"
+    display_url_description: "Browse to this URL in your screen(s) to display this carousel"
+    cannot_preview: "Cannot preview carousel (add some posters first!)"
+
+  posters:
+    new_poster: 'New poster'
+    empty: "No posters yet."
+    create_callout: "Upload one now!"
+    background_file_hint: 'Posters should be image files no larger than 5MB.'
+    delete: 'Delete'
+    delete_confirmation: 'Are you sure you want to delete this poster?'
+    new_title: 'Upload a new poster for your "%{title}" carousel'

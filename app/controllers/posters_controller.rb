@@ -11,7 +11,7 @@ class PostersController < AdminController
 
     respond_to do |f|
       if @poster.save
-        f.html { redirect_to @poster.carousel, notice: 'Poster successfully created.' }
+        f.html { redirect_to @poster.carousel, notice: t('posters.create.success') }
         f.json { render json: @poster, status: :created }
       else
         f.html { render :new }
@@ -24,7 +24,7 @@ class PostersController < AdminController
     @poster.delete
 
     respond_to do |f|
-      f.html { redirect_to @poster.carousel, notice: 'Poster successfully deleted.' }
+      f.html { redirect_to @poster.carousel, notice: t('posters.destroy.success') }
       f.json { head :no_content }
     end
   end
