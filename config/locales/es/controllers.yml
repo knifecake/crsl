@@ -1,0 +1,19 @@
+es:
+  carousels:
+    create:
+      success: 'Carousel se ha creado con éxito.'
+    update:
+      success: 'Carousel se ha actualizado correctamente.'
+    destroy:
+      success: 'Carousel se ha borrado correctamente.'
+
+  posters:
+    create:
+      success: 'El poster se ha añadido correctamente.'
+    destroy:
+      success: 'El poster se ha eliminado con éxito.'
+
+  settings:
+    update:
+      success: 'Tu nueva configuración se ha guardado.'
+      error: 'Ha habido errores al intentar actualizar tu configuración: '

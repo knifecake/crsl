@@ -1,4 +1,4 @@
-<h3>Sign up</h3>
+<h3><%= t 'devise.views.sign_up' %></h3>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -11,6 +11,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, t('devise.views.sign_up'), class: 'btn btn-primary' %>
   </div>
 <% end %>

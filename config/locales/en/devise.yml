@@ -2,6 +2,23 @@
 
 en:
   devise:
+    views:
+      resend_confirmation_submit: 'Resend confirmation instructions'
+      new_password: 'New password'
+      minimum_password_length: '%{characters} characters minimum'
+      confirm_new_password: 'Confirm your new password'
+      submit_password_change: 'Change my password'
+      forgot_password: 'Forgot your password?'
+      send_password_reset: 'Send me reset password instructions'
+      currently_waiting_confirmation: 'Currently waiting confirmation for %{email}'
+      current_password_required: 'we need your current password to confirm your changes'
+      optional_new_password: "leave it blank if you don't want to change it"
+      update: 'Update'
+      sign_in: 'Sign in'
+      sign_up: 'Create an account'
+      confirmation_question: "Didn't receive confirmation instructions?"
+      resend_confirmation_instructions: 'Resend confirmation instructions'
+      unlock_question: "Didn't receive unlock instructions?"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

@@ -1,0 +1,27 @@
+es:
+  carousels:
+    new_carousel: "Carousel nuevo"
+    edit_carousel: "Editar carousel"
+    preview_carousel: "Previsualizar carousel"
+    delete_carousel: "Eliminar carousel"
+
+    title: "Título"
+    preview: "Vista previa"
+    edit: "Editar"
+    delete: "Eliminar"
+
+    confirm_delete: "¿Estas seguro de que quieres borrar este carousel?"
+    empty: "Todavía no hay carousels"
+    create_callout: "¡Crea uno ahora!"
+    display_url_description: "Abre esta URL en el navegador de tu pantalla para mostrar este carousel."
+    cannot_preview: "No se puede previsualizar el carousel (¡añade algunos carteles primero!)."
+
+  posters:
+    new_poster: 'Nuevo cartel'
+    empty: "Todavía no hay carteles."
+    create_callout: "¡Sube uno ahora!"
+    background_file_hint: 'Los carteles deben ser imágenes no mayores de 5MB'
+    delete: 'Eliminar'
+    delete_confirmation: '¿Estas seguro de querer eliminar este cartel?'
+    new_title: 'Subiendo un poster nuevo para el carousel "%{title}"'
+

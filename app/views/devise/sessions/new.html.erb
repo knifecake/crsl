@@ -6,7 +6,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign in", class: 'btn btn-primary' %>
-    or <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
+    <%= f.button :submit, t('devise.views.sign_in'), class: 'btn btn-primary' %>
+    or <%= link_to t('devise.views.sign_up'), new_user_registration_path, class: 'btn btn-default' %>
   </div>
 <% end %>
