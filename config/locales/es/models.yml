@@ -1,0 +1,28 @@
+---
+es:
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+      poster:
+        one: Cartel
+        other: Carteles
+      settings: Confirguración
+
+    attributes:
+      user:
+        name: Nombre
+        email: Email
+        password: Nueva contraseña
+        password_confirmation: Confirmar contraseña
+        current_password: Contraseña actual
+      carousel:
+        title: Título
+      poster:
+        títle: Título
+      settings:
+        display_orientation: Orientación de la pantalla
+        display_orientation/portrait: vertical
+        display_orientation/landscape: horizontal
+        carousel_speed: Velocidad del carousel

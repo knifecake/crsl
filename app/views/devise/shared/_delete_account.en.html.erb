@@ -1,0 +1,14 @@
+<div class="panel panel-danger">
+  <div class="panel-heading"><i class="fa fa-times"></i> Delete acount</div>
+  <div class="panel-body">
+    <p><strong>We are sad to see you go!</strong> Please understand the following:</p>
+    <ul>
+      <li>All your carousels and posters will be deleted from our
+        servers.</li> <li>They will no longer be avaliable for public
+        display: your screens will show a <code>404 - Not Found</code> error instead.</li> <li><strong>We will not be able to recover any of the
+        information you gave us</strong> – we will not even be able to know
+      if you ever had an acount with us.</li>
+    </ul>
+    <p><%= link_to 'Delete my acount now', registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger pull-right' %></p>
+  </div>
+</div>

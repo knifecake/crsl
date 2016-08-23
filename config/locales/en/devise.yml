@@ -3,6 +3,7 @@
 en:
   devise:
     views:
+      account_settings: 'Account settings'
       resend_confirmation_submit: 'Resend confirmation instructions'
       new_password: 'New password'
       minimum_password_length: '%{characters} characters minimum'
@@ -16,6 +17,7 @@ en:
       update: 'Update'
       sign_in: 'Sign in'
       sign_up: 'Create an account'
+      sign_out: 'Sign out'
       confirmation_question: "Didn't receive confirmation instructions?"
       resend_confirmation_instructions: 'Resend confirmation instructions'
       unlock_question: "Didn't receive unlock instructions?"

@@ -1,0 +1,12 @@
+<div class="panel panel-danger">
+  <div class="panel-heading"><i class="fa fa-times"></i> Cancelar la cuenta</div>
+  <div class="panel-body">
+    <p><strong>¡Que pena que hayas decidido irte!</strong> Por favor, ten en cuenta lo siguiente:</p>
+    <ul>
+      <li>Todos tus carousels y tus carteles seran borrados de nuestros servidores.</li>
+      <li>Ya no estarán disponibles para ser mostrados al público: tus pantallas mostraran un error <code>404 – Not Found</code> en lugar del carousel.</li>
+      <li><strong>No podremos recuperar tus datos</strong> – ni siquiera sabremos si alguna vez tuviste una cuenta con nosotros.</li>
+    </ul>
+    <p><%= link_to 'Eliminar mi cuenta ahora', registration_path(resource_name), data: { confirm: "¿Estas seguro de que quieres cancelar tu cuenta?" }, method: :delete, class: 'btn btn-danger pull-right' %></p>
+  </div>
+</div>

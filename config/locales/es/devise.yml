@@ -5,6 +5,7 @@
 es:
   devise:
     views:
+      account_settings: 'Configuración de la cuenta'
       resend_confirmation_submit: 'Reenviar instrucciones de confirmación'
       new_password: 'Nueva contraseña'
       minimum_password_length: 'mínimo %{characters} caracteres'
@@ -18,6 +19,7 @@ es:
       update: 'Guardar'
       sign_in: 'Acceder'
       sign_up: 'Crear una cuenta'
+      sign_out: 'Salir'
       confirmation_question: "¿No has recibido instrucciones para confirmar tu email?"
       resend_confirmation_instructions: 'Enviar instrucciones'
       unlock_question: "¿No has recibido instrucciones para desbloquear tu cuenta?"

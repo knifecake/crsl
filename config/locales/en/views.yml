@@ -1,4 +1,7 @@
 en:
+  layouts:
+    hello: "Hello, %{name}"
+    footer: "© 2016 Elias Hernandis. All rights reserverd."
   carousels:
     new_carousel: "New carousel"
     edit_carousel: "Edit carousel"
@@ -24,3 +27,7 @@ en:
     delete: 'Delete'
     delete_confirmation: 'Are you sure you want to delete this poster?'
     new_title: 'Upload a new poster for your "%{title}" carousel'
+
+  settings:
+    carousel_speed_hint: 'number of milliseconds to show each poster'
+    display_orientation_hint: 'remember to update your posters accordingly'

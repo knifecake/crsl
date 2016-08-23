@@ -1,4 +1,12 @@
 es:
+  layouts:
+    hello: "Hola, %{name}"
+    footer: "© 2016 Elias Hernandis. Todos los derechos reservados."
+
+  settings:
+    carousel_speed_hint: 'tiempo durante el que mostrar cada cartel (en milisegundos)'
+    display_orientation_hint: '¡Recuerda actualizar tus carteles!'
+
   carousels:
     new_carousel: "Carousel nuevo"
     edit_carousel: "Editar carousel"
@@ -24,4 +32,3 @@ es:
     delete: 'Eliminar'
     delete_confirmation: '¿Estas seguro de querer eliminar este cartel?'
     new_title: 'Subiendo un poster nuevo para el carousel "%{title}"'
-
