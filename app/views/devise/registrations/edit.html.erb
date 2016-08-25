@@ -12,7 +12,7 @@
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <%= f.input :email, required: true, hint: t('devise.views.currently_waiting_confirmation', email: resource.unconfirmed_email) %>
             <% else %>
-              <%= f.input :email, required: true %>
+              <%= f.input :email, required: true, hint: t('devise.views.change_email_warning') %>
             <% end %>
 
             <%= f.input :current_password, hint: t('devise.views.current_password_required'), required: true %>

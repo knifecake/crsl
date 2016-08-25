@@ -31,6 +31,11 @@ Rails.application.configure do
 
   # Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    user_name: "crsl",
+    password: ENV['SENDGRID_PASSWORD']
+  }
 
   config.action_mailer.perform_caching = false
 

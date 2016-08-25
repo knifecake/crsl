@@ -23,6 +23,7 @@ es:
       confirmation_question: "¿No has recibido instrucciones para confirmar tu email?"
       resend_confirmation_instructions: 'Enviar instrucciones'
       unlock_question: "¿No has recibido instrucciones para desbloquear tu cuenta?"
+      change_email_warning: "tendrás que verificar tu email otra vez si lo cambias"
     confirmations:
       confirmed: "Tu cuenta ya ha sido confirmada."
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo restablecer tu contraseña."
