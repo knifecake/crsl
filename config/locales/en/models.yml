@@ -1,0 +1,7 @@
+---
+es:
+  activerecord:
+    attributes:
+      settings:
+        display_orientation/portrait: portrait
+        display_orientation/landscape: landscape

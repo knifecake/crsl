@@ -5,16 +5,21 @@
 # and maximum, this matches the default thread size of Active Record.
 #
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
-threads threads_count, threads_count
-
-# Specifies the `port` that Puma will listen on to receive requests, default is 3000.
-#
-port        ENV.fetch("PORT") { 1729 }
+threads 1, threads_count
 
 # Specifies the `environment` that Puma will run in.
 #
 env = ENV.fetch("RAILS_ENV") { "production" }
 environment env
+
+if env == 'production'
+  bind "unix:///home/deploy/crsl/tmp/sockets/puma.sock"
+  pidfile "tmp/pids/puma.pid"
+  state_path "tmp/pids/puma.state"
+  stdout_redirect "log/puma.log", "log/puma.error.log", true
+else
+  port ENV.fetch("PORT") { 3000 }
+end
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -42,10 +47,6 @@ preload_app!
 #
 on_worker_boot do
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-end
-
-if env == 'production'
-  stdout_redirect "log/puma.log", "log/puma.error.log", true
 end
 
 # Allow puma to be restarted by `rails restart` command.
