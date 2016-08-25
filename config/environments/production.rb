@@ -57,8 +57,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "carousel_#{Rails.env}"
   config.action_mailer.perform_caching = false
   config.action_mailer.smtp_settings = {
-    address: smtp.sendgrid.net,
-    user_name: crsl,
+    address: "smtp.sendgrid.net",
+    user_name: "crsl",
     password: ENV['SENDGRID_PASSWORD']
   }
 
