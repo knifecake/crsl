@@ -12,6 +12,6 @@ module Crsl
 
     # Load all locale files
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :es
   end
 end
