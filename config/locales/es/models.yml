@@ -23,4 +23,5 @@ es:
         display_orientation/landscape: horizontal
         speed: Velocidad de rotación
       poster:
-        títle: Título
+        title: Título
+        background: Cartel

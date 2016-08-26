@@ -1,34 +1,32 @@
-<div class="row">
-  <div class="col-lg-8 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading"><i class="fa fa-edit"></i> <%= t 'carousels.edit_carousel' %></div>
-      <div class="panel-body"><%= render 'form', carousel: @carousel %></div>
-    </div>
+<% content_for :main do %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><i class="fa fa-edit"></i> <%= t 'carousels.edit_carousel' %></div>
+    <div class="panel-body"><%= render 'form', carousel: @carousel %></div>
   </div>
+<% end %>
 
-  <div class="col-lg-4 col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="fa fa-cogs"></i> <%= t 'carousels.more_options' %>
-      </div>
-      <div class="list-group">
-        <% if @carousel.can_be_previewed? %>
-          <div class="list-group-item">
-            <h4><%= carousel_display_url %></h4>
-            <p><%= t 'carousels.display_url_description' %></p>
-          </div>
-          <%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview_carousel')}".html_safe, carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
-        <% else %>
-          <a href="#" class="list-group-item disabled"><%= t 'carousels.cannot_preview' %></a>
-        <% end %>
-        <%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete_carousel')}".html_safe, carousel_path(@carousel), method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'list-group-item list-group-item-danger' %>
-      </div>
+<% content_for :sidebar do %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <i class="fa fa-cogs"></i> <%= t 'carousels.more_options' %>
+    </div>
+    <div class="list-group">
+      <% if @carousel.can_be_previewed? %>
+        <div class="list-group-item">
+          <h4><%= carousel_display_url %></h4>
+          <p><%= t 'carousels.display_url_description' %></p>
+        </div>
+        <%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview_carousel')}".html_safe, carousel_display_path(@carousel), class: 'list-group-item', target: '_blank' %>
+      <% else %>
+        <a href="#" class="list-group-item disabled"><%= t 'carousels.cannot_preview' %></a>
+      <% end %>
+      <%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete_carousel')}".html_safe, carousel_path(@carousel), method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'list-group-item list-group-item-danger' %>
     </div>
   </div>
-</div>
+<% end %>
 
 <h3>
-  <i class="fa fa-image"></i> Posters
+  <i class="fa fa-image"></i> <%= t('activerecord.models.poster.other') %>
   <%= link_to "<i class=\"fa fa-plus\"></i> #{t('posters.new_poster')}".html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
 </h3>
 <hr> <!-- TODO: can we still do this (the <hr> thing) -->

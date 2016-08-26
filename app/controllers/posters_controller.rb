@@ -21,7 +21,7 @@ class PostersController < AdminController
   end
 
   def destroy
-    @poster.delete
+    @poster.destroy
 
     respond_to do |f|
       f.html { redirect_to @poster.carousel, notice: t('posters.destroy.success') }

@@ -1,36 +1,34 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Carousels
-        <%= link_to "<i class=\"fa fa-plus\"></i> #{t('carousels.new_carousel')}".html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
-      </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th><%= t 'carousels.title' %></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @carousels.each do |carousel| %>
-            <tr>
-              <td><%= link_to carousel.title, carousel %></td>
-              <td><%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview')}".html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' if carousel.can_be_previewed? %></td>
-              <td><%= link_to "<i class=\"fa fa-edit\"></i> #{t('carousels.edit')}".html_safe, carousel_path(carousel) %></td>
-              <td><%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete')}".html_safe, carousel, method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'text-danger' %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-      <% if @carousels.empty? %>
-        <div class="panel-body text-center">
-          <%= t('carousels.empty') %>
-          <%= link_to t('carousels.create_callout'), new_carousel_path %>
-        </div>
-      <% end %>
+<% content_for :main do %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Carousels
+      <%= link_to "<i class=\"fa fa-plus\"></i> #{t('carousels.new_carousel')}".html_safe, new_carousel_path, class: 'btn btn-success btn-xs pull-right' %>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t 'carousels.title' %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @carousels.each do |carousel| %>
+          <tr>
+            <td><%= link_to carousel.title, carousel %></td>
+            <td><%= link_to "<i class=\"fa fa-eye\"></i> #{t('carousels.preview')}".html_safe, carousel_display_path(carousel), data: { turbolinks: false }, target: '_blank' if carousel.can_be_previewed? %></td>
+            <td><%= link_to "<i class=\"fa fa-edit\"></i> #{t('carousels.edit')}".html_safe, carousel_path(carousel) %></td>
+            <td><%= link_to "<i class=\"fa fa-times\"></i> #{t('carousels.delete')}".html_safe, carousel, method: :delete, data: { confirm: t('carousels.confirm_delete') }, class: 'text-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <% if @carousels.empty? %>
+      <div class="panel-body text-center">
+        <%= t('carousels.empty') %>
+        <%= link_to t('carousels.create_callout'), new_carousel_path %>
+      </div>
+    <% end %>
   </div>
-</div>
+<% end %>

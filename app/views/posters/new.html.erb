@@ -1,7 +1,9 @@
-<div class="panel panel-default">
-  <div class="panel-heading"><%= t 'posters.new_title', title: @poster.carousel.title %></div>
+<% content_for :main do %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><i class="fa fa-upload"></i> <%= t 'posters.new_title', title: @poster.carousel.title %></div>
 
-  <div class="panel-body">
-    <%= render 'form', poster: @poster %>
+    <div class="panel-body">
+      <%= render 'form', poster: @poster %>
+    </div>
   </div>
-</div>
+<% end %>

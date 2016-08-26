@@ -1,6 +1,8 @@
 en:
+  back: Back
   layouts:
     hello: "Hello, %{name}"
+    settings: 'Settings'
     footer: "© 2016 Elias Hernandis. All rights reserverd."
   carousels:
     new_carousel: "New carousel"
@@ -24,8 +26,10 @@ en:
 
   posters:
     new_poster: 'New poster'
+    upload_poster: 'Upload poster'
     empty: "No posters yet."
     create_callout: "Upload one now!"
+    title_hint: 'if blank, the filename will be used'
     background_file_hint: 'Posters should be image files no larger than 5MB.'
     delete: 'Delete'
     delete_confirmation: 'Are you sure you want to delete this poster?'

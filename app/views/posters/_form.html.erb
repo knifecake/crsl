@@ -1,6 +1,7 @@
 <%= simple_form_for(poster, url: carousel_posters_path) do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, required: false, hint: t('posters.title_hint') %>
   <%= f.input :background, as: :file, hint: t('posters.background_file_hint') %>
 
-  <%= f.submit t('posters.new_poster'), class: 'btn btn-success' %>
+  <%= f.submit t('posters.upload_poster'), class: 'btn btn-success' %>
+  <%= link_to t('back'), :back, class: 'btn btn-default' %>
 <% end %>

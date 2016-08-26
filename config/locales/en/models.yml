@@ -2,6 +2,8 @@
 en:
   activerecord:
     attributes:
-      carousels:
+      poster:
+        background: Poster
+      carousel:
         display_orientation/portrait: portrait
         display_orientation/landscape: landscape

@@ -17,7 +17,13 @@ class Poster < ApplicationRecord
     content_type: { content_type: /\Aimage\/.*\z/ },
     size: { less_than: 5.megabytes }
 
+  before_validation :default_title
+
   def display_style
     'rotated' + carousel.display_orientation.to_s
+  end
+
+  def default_title
+    self.title = self.background_file_name if self.title.empty?
   end
 end
