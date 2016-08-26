@@ -27,11 +27,20 @@
 
 <h3>
   <i class="fa fa-image"></i> <%= t('activerecord.models.poster.other') %>
-  <%= link_to "<i class=\"fa fa-plus\"></i> #{t('posters.new_poster')}".html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm pull-right' %>
+  <span class="pull-right">
+    <%= link_to "<i class=\"fa fa-plus\"></i> #{t('posters.new_poster')}".html_safe, new_carousel_poster_path(@carousel), class: 'btn btn-success btn-sm' %>
+    <%= form_tag(reorder_carousel_poster_path(@carousel), method: :put, style: 'display: inline') do %>
+      <%= hidden_field_tag :ordering %>
+      <%= submit_tag t('posters.save_reorder'), class: 'btn btn-sm btn-default' %>
+    <% end %>
+
+  </span>
 </h3>
 <hr> <!-- TODO: can we still do this (the <hr> thing) -->
-<div class="row">
-  <%= render @carousel.posters %>
+<p class="text-muted">
+</p>
+<div class="row" id="poster-previews">
+  <%= render @carousel.posters.order(:order) %>
   <% if @carousel.posters.empty? %>
     <p><%= t 'posters.empty' %> <%= link_to t('posters.create_callout'), new_carousel_poster_path(@carousel) %></p>
   <% end %>

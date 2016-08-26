@@ -12,8 +12,6 @@ en:
       success: 'Poster was successfully created.'
     destroy:
       success: 'Poster was successfully deleted.'
-
-  settings:
-    update:
-      success: 'Settings were successfully updated.'
-      error: 'There were errors while updating your settings: '
+    reorder:
+      success: 'Posters were successfully reordered.'
+      errore: 'Could not reorder posters.'

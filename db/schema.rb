@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825214040) do
+ActiveRecord::Schema.define(version: 20160826113637) do
 
   create_table "carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160825214040) do
     t.datetime "background_updated_at"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "order"
     t.index ["carousel_id"], name: "index_posters_on_carousel_id", using: :btree
   end
 

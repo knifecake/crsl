@@ -1,5 +1,5 @@
 <div class="carousel" data-speed="<%= @carousel.speed %>">
-  <% @carousel.posters.each do |p| %>
+  <% @carousel.posters.order(:order).each do |p| %>
     <div class="poster">
       <img src="<%= p.background.url p.display_style %>">
     </div>

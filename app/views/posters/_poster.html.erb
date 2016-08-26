@@ -1,11 +1,6 @@
-<div class="poster-thumb">
+<div class="poster-thumb" data-id="<%= poster.id %>">
   <img src="<%= poster.background.url :preview %>">
-  <div class="poster-overlay">
-    <div class="actions-wrapper">
-      <div class="actions">
-        <span class="poster-title"><%= poster.title %></span>
-        <%= link_to "<i class=\"fa fa-times\"></i> #{t('posters.delete')}".html_safe, carousel_poster_path(poster.carousel, poster), method: :delete, data: { confirm: t('posters.delete_confirmation') }%>
-      </div>
-    </div>
+  <div class="poster-actions">
+    <%= link_to "<i class=\"fa fa-times\"></i> #{t('posters.delete')}".html_safe, carousel_poster_path(poster.carousel, poster), method: :delete, class: 'text-danger pull-right', data: { confirm: t('posters.delete_confirmation') }%>
   </div>
 </div>

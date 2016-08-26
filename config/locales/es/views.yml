@@ -28,6 +28,7 @@ es:
   posters:
     new_poster: 'Nuevo cartel'
     upload_poster: 'Subir cartel'
+    save_reorder: 'Guardar orden'
     empty: "Todavía no hay carteles."
     create_callout: "¡Sube uno ahora!"
     title_hint: 'si lo dejas en blanco se usará el nombre del archivo adjunto'

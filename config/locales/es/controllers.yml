@@ -9,11 +9,9 @@ es:
 
   posters:
     create:
-      success: 'El poster se ha añadido correctamente.'
+      success: 'El cartel se ha añadido correctamente.'
     destroy:
-      success: 'El poster se ha eliminado con éxito.'
-
-  settings:
-    update:
-      success: 'Tu nueva configuración se ha guardado.'
-      error: 'Ha habido errores al intentar actualizar tu configuración: '
+      success: 'El cartel se ha eliminado con éxito.'
+    reorder:
+      success: 'Los carteles se han reordenado correctamente.'
+      errore: 'No se ha podido reordenar los carteles.'

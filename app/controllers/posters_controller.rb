@@ -11,7 +11,7 @@ class PostersController < AdminController
 
     respond_to do |f|
       if @poster.save
-        f.html { redirect_to @poster.carousel, notice: t('posters.create.success') }
+        f.html { redirect_to @carousel, notice: t('posters.create.success') }
         f.json { render json: @poster, status: :created }
       else
         f.html { render :new }
@@ -27,6 +27,19 @@ class PostersController < AdminController
       f.html { redirect_to @poster.carousel, notice: t('posters.destroy.success') }
       f.json { head :no_content }
     end
+  end
+
+  def reorder
+    order = params[:ordering].split(',')
+    order.each_with_index do |poster, index|
+      p = Poster.find_by(id: poster, carousel: @carousel)
+      p.order = index
+      unless p.save
+        redirect_to @carousel, alert: t('posters.reorder.error')
+      end
+    end
+
+    redirect_to @carousel, notice: t('posters.reorder.success')
   end
 
   protected

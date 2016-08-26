@@ -27,6 +27,7 @@ en:
   posters:
     new_poster: 'New poster'
     upload_poster: 'Upload poster'
+    save_reorder: 'Save ordering'
     empty: "No posters yet."
     create_callout: "Upload one now!"
     title_hint: 'if blank, the filename will be used'
