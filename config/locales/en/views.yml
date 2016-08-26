@@ -7,6 +7,7 @@ en:
     edit_carousel: "Edit carousel"
     preview_carousel: "Preview_carousel"
     delete_carousel: "Delete carousel"
+    more_options: 'More options'
 
     title: "Title"
     preview: "Preview"
@@ -18,6 +19,8 @@ en:
     create_callout: "Create one now!"
     display_url_description: "Browse to this URL in your screen(s) to display this carousel"
     cannot_preview: "Cannot preview carousel (add some posters first!)"
+    speed_hint: 'number of seconds to show each poster'
+    display_orientation_hint: 'how is your screen placed?'
 
   posters:
     new_poster: 'New poster'
@@ -27,7 +30,3 @@ en:
     delete: 'Delete'
     delete_confirmation: 'Are you sure you want to delete this poster?'
     new_title: 'Upload a new poster for your "%{title}" carousel'
-
-  settings:
-    carousel_speed_hint: 'number of milliseconds to show each poster'
-    display_orientation_hint: 'remember to update your posters accordingly'

@@ -8,7 +8,6 @@ es:
       poster:
         one: Cartel
         other: Carteles
-      settings: Confirguración
 
     attributes:
       user:
@@ -19,10 +18,9 @@ es:
         current_password: Contraseña actual
       carousel:
         title: Título
-      poster:
-        títle: Título
-      settings:
         display_orientation: Orientación de la pantalla
         display_orientation/portrait: vertical
         display_orientation/landscape: horizontal
-        carousel_speed: Velocidad del carousel
+        speed: Velocidad de rotación
+      poster:
+        títle: Título

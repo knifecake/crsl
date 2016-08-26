@@ -20,6 +20,7 @@ module Paperclip
 
       # amount to rotate in degrees
       @resize               = options[:resize] || false
+      @rotate               = options[:rotate] || false
     end
 
     def convert_options?
@@ -37,7 +38,10 @@ module Paperclip
       parameters = []
       parameters << source_file_options
       parameters << ":source"
-      parameters << "-resize \"#{@resize}\"" # transformation command
+
+      # transformation command(s)
+      parameters << "-resize \"#{@resize}\"" if @resize
+      parameters << "-rotate \"#{@rotate}\"" if @rotate
       parameters << convert_options
       parameters << ":dest"
 
@@ -47,6 +51,7 @@ module Paperclip
         convert(parameters, source: File.expand_path(src.path), dest: File.expand_path(dst.path))
       rescue Cocaine::ExitStatusError => e
         raise Paperclip::Error, e
+        # TODO: change in production
         # raise Paperclip::Error, "There was an error processing the thumbnail for #{@basename}"
       end
 

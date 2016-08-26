@@ -1,12 +1,45 @@
-<%= simple_form_for(@carousel) do |f| %>
+<%= simple_form_for(carousel, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
     <%= f.association :user, as: :hidden %>
+
+    <%= f.input :title %>
+
+    <%= f.input :speed, hint: t('carousels.speed_hint') %>
+
+    <div class="form-group required">
+      <label for="display_orientation" class="required control-label col-sm-3">
+        <abbr title="required">*</abbr>
+        <%= t 'activerecord.attributes.carousel.display_orientation' %>
+      </label>
+      <div class="col-sm-9">
+        <label class="radio-inline">
+          <%= f.radio_button :display_orientation, '0' %>
+          <i class="fa fa-tv"></i>
+        </label>
+        <label class="radio-inline">
+          <%= f.radio_button :display_orientation, '1' %>
+          <i class="fa fa-tv fa-rotate-90"></i>
+        </label>
+        <label class="radio-inline">
+          <%= f.radio_button :display_orientation, '2' %>
+          <i class="fa fa-tv fa-rotate-180"></i>
+        </label>
+        <label class="radio-inline">
+          <%= f.radio_button :display_orientation, '3' %>
+          <i class="fa fa-tv fa-rotate-270"></i>
+        </label>
+        <p class="help-block"><%= t 'carousels.display_orientation_hint' %></p>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn-primary' %>
+    <div class="form-group">
+      <div class="col-sm-9 col-sm-offset-3">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    </div>
   </div>
 <% end %>

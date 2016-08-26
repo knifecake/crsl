@@ -3,11 +3,13 @@ class Poster < ApplicationRecord
 
   has_attached_file :background,
     styles: {
-      preview: { resize: '600x420' },
-      carousel: { resize: '1542x1080' },
-      rotated: { resize: '1542x1080', rotation: '-90' }
+      preview: { resize: '600x600' },
+      rotated0: { resize: '1920x1920' },
+      rotated1: { resize: '1920x1920', rotate: '90' },
+      rotated2: { resize: '1920x1920', rotate: '180' },
+      rotated3: { resize: '1920x1920', rotate: '270' }
     },
-    processors: [:posterify, :rotator]
+    processors: [:posterify]
 
   validates :title, presence: true
   validates_attachment :background,
@@ -15,11 +17,7 @@ class Poster < ApplicationRecord
     content_type: { content_type: /\Aimage\/.*\z/ },
     size: { less_than: 5.megabytes }
 
-  def height(style)
-      carousel.user.settings.display_orientation == 'portrait' ? '300px' : '210px'
-  end
-
-  def width(style)
-    carousel.user.settings.display_orientation == 'portrait' ? '210px' : '300px'
+  def display_style
+    'rotated' + carousel.display_orientation.to_s
   end
 end

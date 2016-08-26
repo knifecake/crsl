@@ -3,15 +3,12 @@ es:
     hello: "Hola, %{name}"
     footer: "© 2016 Elias Hernandis. Todos los derechos reservados."
 
-  settings:
-    carousel_speed_hint: 'tiempo durante el que mostrar cada cartel (en milisegundos)'
-    display_orientation_hint: '¡Recuerda actualizar tus carteles!'
-
   carousels:
     new_carousel: "Carousel nuevo"
-    edit_carousel: "Editar carousel"
-    preview_carousel: "Previsualizar carousel"
+    edit_carousel: "Editar configuración del carousel"
+    preview_carousel: "Previsualizar el carousel"
     delete_carousel: "Eliminar carousel"
+    more_options: 'Más opciones'
 
     title: "Título"
     preview: "Vista previa"
@@ -23,6 +20,8 @@ es:
     create_callout: "¡Crea uno ahora!"
     display_url_description: "Abre esta URL en el navegador de tu pantalla para mostrar este carousel."
     cannot_preview: "No se puede previsualizar el carousel (¡añade algunos carteles primero!)."
+    speed_hint: 'tiempo durante el que mostrar cada cartel (en segundos)'
+    display_orientation_hint: '¿Cómo tienes colocada la pantalla?'
 
   posters:
     new_poster: 'Nuevo cartel'
@@ -30,5 +29,5 @@ es:
     create_callout: "¡Sube uno ahora!"
     background_file_hint: 'Los carteles deben ser imágenes no mayores de 5MB'
     delete: 'Eliminar'
-    delete_confirmation: '¿Estas seguro de querer eliminar este cartel?'
+    delete_confirmation: '¿Estás seguro de que quieres eliminar este cartel?'
     new_title: 'Subiendo un poster nuevo para el carousel "%{title}"'

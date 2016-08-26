@@ -1,9 +1,7 @@
 <div class="carousel" data-speed="<%= @carousel.speed %>">
   <% @carousel.posters.each do |p| %>
-    <% if @carousel.portrait? %>
-      <div class="poster" style="background-image: url(<%= p.background.url :rotated %>)"></div>
-    <% else %>
-      <div class="poster" style="background-image: url(<%= p.background.url :carousel %>)"></div>
-    <% end %>
+    <div class="poster">
+      <img src="<%= p.background.url p.display_style %>">
+    </div>
   <% end %>
 </div>

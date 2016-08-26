@@ -32,34 +32,6 @@
     <div class="panel panel-default">
       <div class="panel-heading"><i class="fa fa-tv"></i> <%= t 'activerecord.models.settings' %></div>
       <div class="panel-body">
-        <%= simple_form_for(current_user.settings, url: update_settings_path, method: :put, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
-          <div class="form-inputs">
-            <div class="form-group required">
-              <label for="settings_display_orientation" class="required control-label col-sm-3">
-                <abbr title="required">*</abbr>
-                <%= t 'activerecord.attributes.settings.display_orientation' %>
-              </label>
-              <div class="col-sm-9">
-                <label class="radio-inline">
-                  <%= radio_button_tag 'settings[display_orientation]', 'portrait', current_user.settings.display_orientation == 'portrait' %>
-                  <i class="fa fa-tv fa-rotate-270"></i> <%= t 'activerecord.attributes.settings.display_orientation/portrait' %>
-                </label>
-                <label class="radio-inline">
-                  <%= radio_button_tag 'settings[display_orientation]', 'landscape', current_user.settings.display_orientation == 'landscape' %>
-                  <i class="fa fa-tv"></i> <%= t 'activerecord.attributes.settings.display_orientation/landscape' %>
-                </label>
-                <p class="help-block"><%= t 'settings.display_orientation_hint' %></p>
-              </div>
-            </div>
-            <%= f.input :carousel_speed, hint: t('settings.carousel_speed_hint') %>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-9 col-sm-offset-3">
-              <%= f.button :submit, class: 'btn btn-primary' %>
-            </div>
-          </div>
-        <% end %>
       </div>
     </div>
 

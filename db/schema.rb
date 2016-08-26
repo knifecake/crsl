@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821115810) do
+ActiveRecord::Schema.define(version: 20160825214040) do
 
   create_table "carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "display_orientation"
+    t.integer  "speed"
     t.index ["user_id"], name: "index_carousels_on_user_id", using: :btree
   end
 
@@ -30,13 +32,6 @@ ActiveRecord::Schema.define(version: 20160821115810) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["carousel_id"], name: "index_posters_on_carousel_id", using: :btree
-  end
-
-  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
-    t.string  "display_orientation"
-    t.integer "carousel_speed"
-    t.index ["user_id"], name: "index_settings_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,5 +61,4 @@ ActiveRecord::Schema.define(version: 20160821115810) do
 
   add_foreign_key "carousels", "users"
   add_foreign_key "posters", "carousels"
-  add_foreign_key "settings", "users"
 end
