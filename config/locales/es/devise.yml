@@ -5,6 +5,9 @@
 es:
   devise:
     views:
+      remember_me: 'recuérdame'
+      or: 'o'
+      panel_greeting: 'Autenticación requerida'
       account_settings: 'Configuración de la cuenta'
       resend_confirmation_submit: 'Reenviar instrucciones de confirmación'
       new_password: 'Nueva contraseña'
