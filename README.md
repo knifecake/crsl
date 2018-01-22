@@ -1,3 +1,5 @@
+**Notice:** This project is no longer being maintained. As of January 2018, two vulnerabilities have been discovered in gems that this project depends on: Nokogiri and Paperclip. If you plan to use this project in any way, consider updating these dependencies.
+
 # CRSL: a carousel management app
 
 Carousel is an app designed to turn any conventional "smart" TV into a public
